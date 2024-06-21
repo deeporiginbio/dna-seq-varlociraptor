@@ -1,6 +1,6 @@
-samples: config-simple/samples.tsv
+samples: config/samples.tsv
 
-units: config-simple/units.tsv
+units: config/units.tsv
 
 ref:
   # Number of chromosomes to consider for calling.
@@ -20,7 +20,6 @@ primers:
     primers_fa2: ""
     library_error: 0
     library_length: 0
-
 
 # Estimation of mutational burden.
 mutational_burden:
@@ -48,9 +47,9 @@ calling:
   fdr-control:
     threshold: 0.05
     local: true
-    events: 
+    events:
       present:
-        varlociraptor: 
+        varlociraptor:
           - x
           - y
           - both
@@ -76,7 +75,6 @@ annotations:
         # Plugin args can be passed as well, e.g. "LoFtool,path/to/custom/scores.txt".
         - LoFtool
 
-
 params:
   cutadapt: ""
   picard:
@@ -88,7 +86,7 @@ params:
     # add extra arguments for varlociraptor call
     # For example, in case of panel data consider to omit certain bias estimations
     # which might be misleading because all reads of an amplicon have the sample start
-    # position, strand etc. (--omit-strand-bias, --omit-read-position-bias, 
+    # position, strand etc. (--omit-strand-bias, --omit-read-position-bias,
     # --omit-softclip-bias, --omit-read-orientation-bias).
     call: ""
     # Add extra arguments for varlociraptor preprocess. By default, we limit the depth to 200.
